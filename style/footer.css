@@ -1,0 +1,18 @@
+footer {
+  margin: 0 auto;
+  padding: 36px 16px;
+  align-items: center;
+  text-align: center;
+
+  .email {
+    font-size: 2rem;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+    color: var(--color-white);
+  }
+  p {
+    font-size: 1.5rem;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+  }
+}

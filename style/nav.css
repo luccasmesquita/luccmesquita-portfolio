@@ -1,59 +1,63 @@
 header {
-    width: 100%;
-    padding-top: 16px;
+  width: 100%;
+  padding-top: 16px;
 }
 .nav-menu {
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav-list {
-    list-style: none;
-    display: flex;
-
-    li{
-        margin-left: 24px;
-    }
+  list-style: none;
+  display: flex;
+}
+.nav-list li {
+  margin-left: 24px;
 }
 .logo {
-    max-width: 88px;
-    color: white;
-    @include responsive() {
-        margin-left: 10px;
-        max-width: 55px;
-    }
+  max-width: 88px;
+  color: white;
+  @include responsive() {
+    margin-left: 10px;
+    max-width: 55px;
+  }
 }
 .nav-link {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 14px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-weight: 200;
-    position: relative;
-    color: $gray-3;
-    transition: .7s ease;
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 200;
+  position: relative;
+  color: var(--gray-3);
+  transition: 0.7s ease;
+}
+.nav-link &::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  width: 3px;
+  height: 0px;
+  background: linear-gradient(
+    180deg,
+    var(--color-light-blue),
+    var(--color-light-purple),
+    var(--color-light-blue),
+    var(--color-light-purple) 0%,
+    var(--color-light-blue) 100%
+  );
+  transition: 0.7s ease;
+}
 
-    &::after{
-        content: '';
-        display: block;
-        position: absolute;
-        top: -35px;
-        left: 50%;
-        width: 3px;
-        height: 0px;
-        background: linear-gradient(180deg,var(--color-light-blue),var(--color-light-purple),var(--color-light-blue),var(--color-light-purple) 0%, var(--color-light-blue) 100% );
-    transition: .7s ease;
+.nav-link &:hover {
+  color: var(--white-light);
 
-    }
-
-    &:hover {
-        color: $white-light;
-
-        &::after {
-            height: 40px;
-        }
-    }
+  &::after {
+    height: 40px;
+  }
 }
